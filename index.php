@@ -15,8 +15,7 @@
 <body>
 	<h1>xkcd password generator</h1>
 	<div class="passwordSection">
-
-		<?php echo array_to_ul(array('Cesar','Zavala','Mesta')); ?>
+		<?php echo xkcd_password(3,"@-@"); ?>
 	</div>
 	<h2>Test below</h2>
 </body>

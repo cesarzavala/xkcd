@@ -4,7 +4,7 @@
 	/* 
 	Returns an array of n random words read from words.txt
 	*/
-	function xkcd_password($numberOfWords=4, $options=array()) {
+	function xkcd_password($numberOfWords=4, $separator=" ") {
 		$contents = file_get_contents('words.txt');
 		$contents = str_replace("\r", "", $contents);
 		$words = explode("\n",$contents );
@@ -13,7 +13,7 @@
 	    {
 	        $result[] = $words[$value];
 	    }
-	    return $result;
+	    return implode($separator,$result);
 	}
 
 	function string_to_li($original) {
