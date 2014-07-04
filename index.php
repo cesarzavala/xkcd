@@ -4,6 +4,7 @@
 <head>
 	<title>xkcd password generator</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
 	<h1>xkcd password generator</h1>
