@@ -1,5 +1,10 @@
 <?php
 
+	print_r($_POST);
+	$separator = (isset($_POST['separator']) ? trim($_POST['separator']) : "-");
+	$words = (isset($_POST['words']) ? trim($_POST['words']) : 3);
+	$transformation = (isset($_POST['transformation']) ? trim($_POST['transformation']) : "lowercase");
+	
 	/*
 		Runs the string transformation for each element of an array
 	*/
@@ -24,7 +29,7 @@
 	/* 
 	Returns an array of n random words read from words.txt
 	*/
-	function xkcd_password($numberOfWords=4, $separator=" ", $transformation="") {
+	function xkcd_password($numberOfWords=4, $separator="-", $transformation="") {
 		$contents = file_get_contents('words.txt');
 		$contents = str_replace("\r", "", $contents);
 		$words = explode("\n",$contents );
@@ -38,14 +43,11 @@
 	    return $password;
 	}
 
-	function string_to_li($original) {
-		return "<li>$original</li>";
-	}
 
-	function array_to_ul($original) {
-		$li_array = array_map("string_to_li",$original);
-		// print_r($li_array);
-		return "<ul>".implode(" ",$li_array)."</ul>";
+	function transformation_checked($which, $transformation) {
+		if ( ($which==$transformation) or ($which="lowercase" and $transformation=="")){
+			return "checked";
+		}
 	}
 
 ?>
