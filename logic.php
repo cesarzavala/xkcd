@@ -41,7 +41,7 @@
 	/* 
 	Returns an array of n random words read from words.txt
 	*/
-	function xkcd_password($numberOfWords=4, $separator="-", $transformation="") {
+	function xkcd_password($numberOfWords=4, $separator="-", $transformation="", $length=0) {
 		$contents = file_get_contents('words.txt');
 		$contents = str_replace("\r", "", $contents);
 		$words = explode("\n",$contents );
@@ -52,6 +52,9 @@
 	    }
 	    $password = xkcd_transform($transformation,$result);
 	    $password = implode($separator,$password);
+	    if ($length>0) {
+	    	$password = substr($password, 1, $length);
+	    }
 	    return $password;
 	}
 

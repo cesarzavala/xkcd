@@ -32,7 +32,7 @@
 </nav>
 <header class="jumbotron">
 	<h2 class="subtitle">Generate a random password <a href="http://xkcd.com/936/">xkcd</a> style from a list of 235,886 words</h2>
-	<div class="password"><?php echo xkcd_password($numberOfWords,$separator,$transformation); ?></div>
+	<div class="password"><?php echo xkcd_password($numberOfWords,$separator,$transformation,$length); ?></div>
 </header>
 
 <form action="index.php" method="POST" role="form" class="form-horizontal">
@@ -76,10 +76,11 @@
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="form-group">
-				<label for="length" class="col-md-3 control-label">Length</label>
+				<label for="length" class="col-md-3 control-label">Maximum length</label>
 				<div class="col-md-3">
 					<input type="number" class="form-control" id="length" name="length" 
 						value="<?php echo $length; ?>">
+						<p class="help-block">Length limit; 0 indicates no limit</p>
 				</div>
 			</div>				
 		</div> <!-- Second row first column -->
