@@ -32,32 +32,39 @@
 </nav>
 <header class="jumbotron">
 	<h2 class="subtitle">Generate a random password <a href="http://xkcd.com/936/">xkcd</a> style from a list of 235,886 words</h2>
-	<div class="password"><?php echo xkcd_password($words,$separator,$transformation); ?></div>
+	<div class="password"><?php echo xkcd_password($numberOfWords,$separator,$transformation); ?></div>
 </header>
 <form action="index.php" method="POST" role="form" class="form-horizontal">
 	<div class="form-group">
-		<label for="separator" class="col-sm-3 control-label">Separator</label>
-		<div class="col-sm-3">
+		<label for="separator" class="col-md-3 control-label">Separator</label>
+		<div class="col-md-3">
 			<input type="text" class="form-control" id="separator" name="separator" 
-				placeholder="<?php echo $separator; ?>">
+				value="<?php echo $separator; ?>">
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="words" class="col-sm-3 control-label">Number of Words</label>
-		<div class="col-sm-3">
-			<input type="number" class="form-control" id="words" name="words" 
-				placeholder="<?php echo $words; ?>">
+		<label for="numberofwords" class="col-md-3 control-label">Number of Words</label>
+		<div class="col-md-3">
+			<input type="number" class="form-control" id="numberofwords" name="numberofwords" 
+				value="<?php echo $numberOfWords; ?>">
 		</div>
 	</div>
 	<div class="form-group">
-		<label for="transformation" class="col-sm-3 control-label">Transformation</label>
-		<div class="col-sm-9">
-			<label><input type="radio" name="transformation" value="uppercase" <?php echo transformation_checked("uppercase",$transformation) ?> >Upper Case</label>
-			<label><input type="radio" name="transformation" value="firstupper" <?php echo transformation_checked("firstupper",$transformation) ?> >First letter upper case</label>
-			<label><input type="radio" name="transformation" value="lowercase" <?php echo transformation_checked("lowercase",$transformation) ?> >Lower Case</label>
+		<label for="transformation" class="col-md-3 control-label">Transformation</label>
+		<div class="col-md-9">
+			<div class="radio">
+				<label><input type="radio" name="transformation" value="uppercase" <?php echo transformation_checked("uppercase",$transformation) ?> >Upper Case</label>
+			</div>
+			<div class="radio">
+				<label><input type="radio" name="transformation" value="firstupper" <?php echo transformation_checked("firstupper",$transformation) ?> >First letter upper case</label>
+			</div>
+			<div class="radio">
+				<label><input type="radio" name="transformation" value="lowercase" <?php echo transformation_checked("lowercase",$transformation) ?> >Lower Case</label>
+			</div>
 		</div>
 	</div>
-	<button type="button" class="col-sm-offset-3 btn btn-default">Generate password</button>
+
+	<button type="submit" class="col-md-offset-3 btn btn-default">Generate another password</button>
 </form>
 </body>
 </html>
