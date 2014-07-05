@@ -1,3 +1,19 @@
-.passwordSection {
-	background-color: silver;
+.password {
+	font-size: 24pt;
+	border: 3px dotted #cdbfe3;
+}
+
+.jumbotron {
+	color: white;
+	background-color: #6f5499;
+	padding-bottom: 10px;
+}
+
+.subtitle {
+	color: #cdbfe3;
+}
+
+nav .container-fluid {
+	background-color: black;
+	color: white;
 }

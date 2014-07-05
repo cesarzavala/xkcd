@@ -1,6 +1,8 @@
 <?php
 
-	print_r($_POST);
+	/*
+	Extract parameters from form or establish default values for parameters
+	*/
 	$separator = (isset($_POST['separator']) ? trim($_POST['separator']) : "-");
 	$words = (isset($_POST['words']) ? trim($_POST['words']) : 3);
 	$transformation = (isset($_POST['transformation']) ? trim($_POST['transformation']) : "lowercase");
