@@ -6,7 +6,17 @@
 	$separator = (isset($_POST['separator']) ? trim($_POST['separator']) : "-");
 	$numberOfWords = (isset($_POST['numberofwords']) ? trim($_POST['numberofwords']) : 3);
 	$transformation = (isset($_POST['transformation']) ? trim($_POST['transformation']) : "lowercase");
+	$length = (isset($_POST['length']) ? trim($_POST['length']) : 0);
 	
+
+	if ($numberOfWords=="") {
+		$numberOfWords = 3;
+	}
+
+	if ($length=="") {
+		$length = 0;
+	}
+
 	/*
 		Runs the string transformation for each element of an array
 	*/
