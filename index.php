@@ -30,12 +30,21 @@
 		<h1>xkcd password generator</h1>
   </div>
 </nav>
-<header class="jumbotron">
-	<h2 class="subtitle">Generate a random password <a href="http://xkcd.com/936/">xkcd</a> style from a list of 235,886 words</h2>
-	<div class="password"><?php echo xkcd_password($numberOfWords,$separator,$transformation,$length); ?></div>
-</header>
+
 
 <form action="index.php" method="POST" role="form" class="form-horizontal">
+
+	<header class="jumbotron">
+		<h2 class="subtitle">Generate a random password <a href="http://xkcd.com/936/">xkcd</a> style from a list of 235,886 words</h2>
+		<div class="password"><?php echo xkcd_password($numberOfWords,$separator,$transformation,$length); ?></div>
+		<br>
+		<div class="button">
+			<button type="submit" class="btn btn-default">Generate another password</button>
+		</div>
+
+	</header>
+
+
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="form-group">
