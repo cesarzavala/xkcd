@@ -1,6 +1,6 @@
 <?php 	
-	error_reporting(-1);
-	ini_set('display_errors', 1);
+	//error_reporting(-1);
+	//ini_set('display_errors', 1);
 	require('logic.php'); 
 ?>
 <!DOCTYPE html>
@@ -21,6 +21,7 @@
 	<!-- End of Bootstrap additions -->
 
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="icon" type="image/ico" href="images/favicon.ico">
 
 
 </head>
@@ -48,35 +49,47 @@
 	<div class="row">
 		<div class="col-sm-4">
 			<div class="form-group">
-				<label for="separator" class="col-md-3 control-label">Separator</label>
-				<div class="col-sm-12">
-					<input type="text" class="form-control" id="separator" name="separator" 
-							value="<?php echo $separator; ?>">
-					<p class="help-block">One or more regular or special characters"</p>
+				<div class="row">
+					<label for="separator" class="col-md-6 control-label">Separator</label>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<input type="text" class="form-control" id="separator" name="separator" 
+								value="<?php echo $separator; ?>">
+						<p class="help-block">One or more regular or special characters"</p>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col-sm-4">
 			<div class="form-group">
-				<label for="numberofwords" class="col-md-3 control-label">Number of Words</label>
-				<div class="col-md-3">
-					<input type="number" class="form-control" id="numberofwords" name="numberofwords" 
-						value="<?php echo $numberOfWords; ?>">
+				<div class="row">
+					<label for="numberofwords" class="col-md-6 control-label">Number of Words</label>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<input type="number" class="form-control" id="numberofwords" name="numberofwords" 
+							value="<?php echo $numberOfWords; ?>">
+					</div>
 				</div>
 			</div>		
 		</div>
 		<div class="col-sm-4">
 			<div class="form-group">
-				<label for="transformation" class="col-md-3 control-label">Transformation</label>
-				<div class="col-md-9">
-					<div class="radio">
-						<label><input type="radio" name="transformation" value="uppercase" <?php echo transformation_checked("uppercase",$transformation) ?> >Upper Case</label>
-					</div>
-					<div class="radio">
-						<label><input type="radio" name="transformation" value="firstupper" <?php echo transformation_checked("firstupper",$transformation) ?> >First letter upper case</label>
-					</div>
-					<div class="radio">
-						<label><input type="radio" name="transformation" value="lowercase" <?php echo transformation_checked("lowercase",$transformation) ?> >Lower Case</label>
+				<div class="row">
+					<label  class="col-md-4 control-label">Transformation</label>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="radio">
+							<label><input type="radio" name="transformation" value="uppercase" <?php echo transformation_checked("uppercase",$transformation) ?> >Upper Case</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="transformation" value="firstupper" <?php echo transformation_checked("firstupper",$transformation) ?> >First letter upper case</label>
+						</div>
+						<div class="radio">
+							<label><input type="radio" name="transformation" value="lowercase" <?php echo transformation_checked("lowercase",$transformation) ?> >Lower Case</label>
+						</div>
 					</div>
 				</div>
 			</div>
