@@ -99,7 +99,9 @@
 		<div class="col-sm-12">
 			<div class="form-group">
 				<div class="row">
-					<label for="length" class="col-md-6 control-label">Maximum length</label>
+					<div class="col-sm-3">
+						<label for="length" class="control-label">Maximum length</label>
+					</div>
 				</div>
 				<div class="row">
 					<div class="col-sm-3">
